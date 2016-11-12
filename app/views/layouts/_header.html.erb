@@ -1,10 +1,14 @@
 <header>
-  	<%= image_tag('hamburger-menu.png', class: 'menu-icon') %>
-  	<%= image_tag('logo.png', class: 'logo') %>
-	<nav>
+	<div>
+		<%= image_tag('hamburger-menu.png', class: 'menu-icon') %>
+	</div>
+	<div>
+		<%= image_tag('logo.png', class: 'logo') %>
+	</div>
+	<div>
 		<ul>
-			<%= link_to 'Home', root_path %>
-			<%= link_to 'Register', new_user_path %>
+			<li>Register</li>
+			<li>Login</li>
 		</ul>
-	</nav>
-  </header>
+	</div>
+</header>
