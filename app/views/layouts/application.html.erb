@@ -9,16 +9,7 @@
   </head>
 
   <body>
-  <header>
-  	<%= image_tag('hamburger-menu.png', class: 'menu-icon') %>
-  	<%= image_tag('logo.png', class: 'logo') %>
-	<nav>
-		<ul>
-			<% link_to 'Home', root_path %>
-			<% link_to 'Register', new_user_path %>
-		</ul>
-	</nav>
-  </header>
+  <%= render 'layouts/header' %>
     <%= yield %>
   </body>
 </html>
