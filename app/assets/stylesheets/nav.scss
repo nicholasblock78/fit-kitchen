@@ -1,18 +1,23 @@
-nav {
-	visibility: hidden;
-	margin-left: 3.5%;
-	margin-top: 3%;
+aside {
 
-	ul {
-		list-style-type: none;
+	nav {
+		background-color: yellow;
+		margin-left: 1%;
+		margin-top: 1.5%;
+		width: 13%;
+		visibility: hidden;
 
-		li {
-			padding-top: 5px;
+		ul {
+			list-style-type: none;
 
+			li {
+				padding-top: 5px;
+
+			}
 		}
 	}
-}
 
-.visible {
-	visibility: visible;
+	.visible {
+		visibility: visible;
+	}
 }
