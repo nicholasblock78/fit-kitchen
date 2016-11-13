@@ -1,6 +1,6 @@
 $(function () {
 	$('.menu-icon').on('click', function() {
-		// event.preventDefault();
+		event.preventDefault();
 
 		$('nav').toggleClass('visible');
 	})
