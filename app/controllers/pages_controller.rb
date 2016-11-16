@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
 	def index
-		@recipe = []
+		@recipes = Recipe.all
 	end
 end

@@ -1,2 +1,5 @@
 <h1>Homepage</h1>
 <h3>Recipes</h3>
+<% @recipes.each do |r| %>
+	<%= link_to "#{r.title}", recipe_path(r) %>
+<% end %>

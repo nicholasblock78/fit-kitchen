@@ -1,0 +1,23 @@
+<h2><%= @recipe.title %></h2>
+<div class="times">
+	<p>Prep time: <%= @recipe.prep_time %> min</p>
+	<p>Cook time: <%= @recipe.cook_time %> min</p>
+	<p>Total time: <%= @recipe.prep_time + @recipe.cook_time %> min</p>
+</div>
+
+<div class="ingredients">
+	<% @recipe.ingredients.each do |ingred| %>
+	<%= ingred.title %>
+	<%= ingred.amount %>
+	<br />
+	<% end %>
+</div>
+<br />
+
+<div class="instructions">
+	<ul>
+		<% @recipe.instructions.each do |instruc| %>
+		<li><%= instruc.step %></li>
+		<% end %>
+	</ul>	
+</div>
