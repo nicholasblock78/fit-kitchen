@@ -1,3 +1,19 @@
-<%= form_for(:session, url: login_path) do |f| %>
+<% if @errors %>
+	<ul>
+		<% @errors.each do |e| %>
+			<li><%= e %></li>
+		<% end %>
+	</ul>
+<% end %>
+
+<h2>Log In Form</h2>
+<%= form_tag '/login' do %>
+
+  Email: <%= text_field_tag :email %>
+  Password: <%= password_field_tag :password %>
+  Pass COnfirmation: <%= password_field_tag :password_confirmation %>
+  <%= submit_tag "Submit" %>
 
 <% end %>
+
+
