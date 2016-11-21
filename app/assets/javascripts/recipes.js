@@ -27,26 +27,44 @@ $(function () {
 		var recipe = $(this);
 		console.log(recipe[0].value)
 		var recipeId = recipe[0].value;
-		$.ajax({
-			url: '/instructions',
-			method: 'get',
-			data: {recipe_id: recipeId}
+		$.when(
+			// $.ajax({
+			// 	url: '/instructions',
+			// 	method: 'get',
+			// 	data: {recipe_id: recipeId}
+			// })
+			// .done(function(response) {
+			// 	console.log(response);
+			// 	var steps = response.body[0].steps;
+			// 	var html = '<ul>';
+			// 	for (var i = 0; i < steps.length; i++) {
+			// 		html += '<li>' + steps[i].step + '</li>';
+			// 	}
+			// 	html += '</ul>';
+			// 	$('#search-results').append(html);
+			// }),
+			$.ajax({
+				url: '/ingredients',
+				method: 'get',
+				data: {recipe_id: recipeId}
+			})
+			.done(function(response) {
+				console.log(response);
+				// var steps = response.body[0].steps;
+				// var html = '<ul>';
+				// for (var i = 0; i < steps.length; i++) {
+				// 	html += '<li>' + steps[i].step + '</li>';
+				// }
+				// html += '</ul>';
+				// $('#search-results').append(html);
+			})
+		)
+		.then(function() {
+			console.log('Now finished');
 		})
-		.done(function(response) {
-			console.log(response);
-			var steps = response.body[0].steps;
-			var html = '<ul>';
-			for (var i = 0; i < steps.length; i++) {
-				html += '<li>' + steps[i].step + '</li>';
-			}
-			html += '</ul>';
-			$('#search-results').append(html);
-		})
+
+		
 	})
 
 
 });
-
-// These code snippets use an open-source library.
-
-
