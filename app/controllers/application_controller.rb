@@ -5,11 +5,15 @@ class ApplicationController < ActionController::Base
 
 	# before_action :require_user, only: [:index, :show]
 	
-	# def current_user 
-	# 	@current_user ||= User.find(session[:user_id]) if session[:user_id] 
-	# end
+	def current_user
+		@current_user ||= User.find(session[:user_id]) if session[:user_id]
+	end
 
-	def require_user 
-		redirect_to '/login' unless current_user 
+	def require_user
+		if current_user
+			true
+		else
+			redirect_to sessions_new_path, notice: "You must be logged in to view that page."
+		end
 	end
 end
