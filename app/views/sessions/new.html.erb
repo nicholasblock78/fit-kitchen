@@ -7,18 +7,6 @@
 <% end %>
 
 <h2>Log In Form</h2>
-<%= form_for(:session, url: login_path) do |f| %>
-	<%= f.label :email %>
-	<%= f.email_field :email %>
-
-	<%= f.label :password %>
-	<%= f.password_field :password %>
-
-	<%= f.submit %>
-<% end %>
-
-
-<h2>Second Log In Form</h2>
 <%= form_tag '/login' do %>
 
   Email: <%= text_field_tag :email %>

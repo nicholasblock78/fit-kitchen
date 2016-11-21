@@ -11,8 +11,6 @@
 <body>
   <%= render 'layouts/header' %>
   <%= render 'layouts/nav' %>
-  <%= link_to 'Login', login_path %>
-  <%= link_to 'Logout', logout_path, method: :delete %>
   <% if current_user %>
   <% else %>
   <% end %>
