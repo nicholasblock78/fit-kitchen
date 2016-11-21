@@ -4,7 +4,10 @@ Rails.application.routes.draw do
   resources 'users' do 
     resources 'recipes'
   end
+  
   get '/search' => 'pages#search'
+  get '/instructions' => 'pages#instructions'
+
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
