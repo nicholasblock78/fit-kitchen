@@ -1,4 +1,5 @@
 <h2><%= @recipe.title %></h2>
+<p>Submitted by: <%= @user.first_name %> <%= @user.last_name %></p>
 <div class="times">
 	<p>Prep time: <%= @recipe.prep_time %> min</p>
 	<p>Cook time: <%= @recipe.cook_time %> min</p>

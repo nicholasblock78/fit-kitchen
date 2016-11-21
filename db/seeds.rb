@@ -1,4 +1,6 @@
-Recipe.create(title: 'Homemade Popcorn', description: 'Ditch the microwave and make this classic snack extra deliciously fresh and healthy!', prep_time: 5, cook_time: 5)
+User.create(first_name: 'Nick', last_name: 'Block', email: 'n@b.com', password: 'pass')
+
+Recipe.create(title: 'Homemade Popcorn', description: 'Ditch the microwave and make this classic snack extra deliciously fresh and healthy!', prep_time: 5, cook_time: 5, user_id: 1)
 	Ingredient.create(title: 'unpopped corn kernels', amount: '1 cup', recipe_id: 1 )
 	Ingredient.create(title: 'olive oil', amount: '1/4 cup', recipe_id: 1 )
 	Ingredient.create(title: 'salt', amount: 'to taste', recipe_id: 1 )
