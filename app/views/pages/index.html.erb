@@ -3,3 +3,16 @@
 <% @recipes.each do |r| %>
 	<%= link_to "#{r.title}", user_recipe_path(r, id: r.id) %>
 <% end %>
+
+<h3>Search for Recipes through Spoonacular API</h3>
+<p>**DISCLAIMER** currently AJAXfying this form  to hit the Spoonacular API and return a set of recipes</p>
+<p>Hardcoded in at the moment is 'burger'</p>
+<form id='recipe-search' action="/" method="get">
+	<input type="text" name="recipe-name" placeholder="enter food name">
+	<input type="submit" value="Search">
+</form>
+<ul>
+	<% @returned['results'].each do |recipe| %>
+		<li><%= recipe['title'] %></li>
+	<% end %>
+</ul>
