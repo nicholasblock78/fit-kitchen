@@ -1,1 +1,4 @@
 <h2>Recipes</h2>
+<% @recipes.each do |r| %>
+	<%= link_to "#{r.title}", user_recipe_path(r, id: r.id) %>
+<% end %>

@@ -7,6 +7,31 @@
 	height: 500px;
 	position: fixed;
 	top:100px;
-	margin-left: 15%;
-	width: 70%;
+	margin-left: 12%;
+	width: 80%;
+}
+
+#home-header {
+	align-items: center;
+	display: flex;
+	justify-content: space-around;
+}
+
+#search-form {
+	margin-left: 20%;
+}
+
+#results {
+	display: flex;
+	flex: row;
+	width: 100%;
+
+	#search-recipes-results {
+		margin: 0;
+		width: 50%;
+	}
+
+	#search-recipe-ingredients {
+		float: right;
+	}
 }

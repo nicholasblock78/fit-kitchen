@@ -19,11 +19,13 @@ $(function () {
 			}
 			html += '</ul>';
 
-			$('#search-results').append(html);		
+			$('#search-recipes-results').append(html);		
 		});
 	});
 
-	$('#search-results').on('click', '.recipe', function() {
+	$('#search-recipes-results').on('click', '.recipe', function() {
+		$('#search-recipe-result').empty();
+		$('#search-recipe-ingredients').empty();
 		var recipe = $(this);
 		console.log(recipe[0].value)
 		var recipeId = recipe[0].value;
@@ -41,7 +43,7 @@ $(function () {
 			// 		html += '<li>' + steps[i].step + '</li>';
 			// 	}
 			// 	html += '</ul>';
-			// 	$('#search-results').append(html);
+				// $('#search-results').append(html);
 			// }),
 			$.ajax({
 				url: '/ingredients',
@@ -49,7 +51,20 @@ $(function () {
 				data: {recipe_id: recipeId}
 			})
 			.done(function(response) {
-				console.log(response);
+				console.log(response.body.extendedIngredients);
+				var ingredients = response.body.extendedIngredients;
+				var ingredientList = '<ul>';
+				var object = response.body
+
+
+				for (var i = 0; i < ingredients.length; i++) {
+					ingredientList += '<li>' + ingredients[i].originalString + '</li>'
+				}
+				ingredientList += '</ul>'
+
+
+				$('#search-recipe-ingredients').append(ingredientList);
+				$('#search-recipe-result').append('<p>'+object.instructions+'</p>');
 				// var steps = response.body[0].steps;
 				// var html = '<ul>';
 				// for (var i = 0; i < steps.length; i++) {

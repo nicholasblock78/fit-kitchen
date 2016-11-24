@@ -1,15 +1,18 @@
-<h1>Homepage</h1>
-<h3>Recipes</h3>
-<% @recipes.each do |r| %>
-	<%= link_to "#{r.title}", user_recipe_path(r, id: r.id) %>
-<% end %>
+<div id="home-header">
+	<h1>Homepage</h1>
+	<h3>Search for Recipes through Spoonacular!</h3>
+</div>
 
-<h3>Search for Recipes through Spoonacular API</h3>
-<p>**DISCLAIMER** </p>
-<p>Please don't spam my search results. I'm only allotted a certain amount of searches until I get charged. Thanks!</p>
+<div id="search-form">
+	<form  id="recipe-form" action="/search" method="get">
+		<input id='recipe-search' type="text" name="recipe-name" placeholder="enter food name">
+		<input type="submit" value="Search">
+	</form>
+</div>
 
-<form  id="recipe-form" action="/search" method="get">
-	<input id='recipe-search' type="text" name="recipe-name" placeholder="enter food name">
-	<input type="submit" value="Search">
-</form>
-<div id="search-results"></div>
+<div id="results">
+	<div id="search-recipes-results"></div>
+	<div id="search-recipe-ingredients"></div>
+</div>
+
+<div id="search-recipe-result"></div>
