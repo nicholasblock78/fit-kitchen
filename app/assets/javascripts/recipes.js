@@ -2,7 +2,9 @@ $(function () {
 
 	$('#recipe-form').on('submit', function() {
 		event.preventDefault();
-		$('#search-results').empty();
+		$('#search-recipes-results').empty();
+		$('#search-recipe-result').empty();
+		$('#search-recipe-ingredients').empty();
 		var searchTerm = $('#recipe-search').val();
 		$form = $(this);
 		$.ajax({
@@ -19,7 +21,7 @@ $(function () {
 			}
 			html += '</ul>';
 
-			$('#search-recipes-results').append(html);		
+			$('#search-recipes-results').append(html);
 		});
 	});
 
@@ -78,7 +80,7 @@ $(function () {
 			console.log('Now finished');
 		})
 
-		
+
 	})
 
 
